@@ -7,4 +7,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Output Github context
-        run: echo "${{ toJSON(github) }}" | jq .
+        run: echo $GITHUB_CONTEXT
+        env:
+          GITHUB_CONTEXT: ${{ toJSON(github) }}
