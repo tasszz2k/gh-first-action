@@ -1,0 +1,45 @@
+name: Deploy Second Action React Demo
+
+on: push
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4.2.2
+      - name: Install NodeJS
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18
+      - name: Install Dependencies
+        run: |
+          cd second-action-react-demo
+          npm ci
+      - name: Run Tests
+        run: |
+          cd second-action-react-demo
+          npm test
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4.2.2
+      - name: Install NodeJS
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18
+      - name: Install Dependencies
+        run: |
+          cd second-action-react-demo
+          npm ci
+      - name: Run Tests
+        run: |
+          cd second-action-react-demo
+          npm test
+      - name: Build project
+        run : |
+          cd second-action-react-demo
+          npm run build
+      - name: Deploy
+        run: echo "Deploying ...!"
