@@ -21,6 +21,7 @@ jobs:
           cd second-action-react-demo
           npm test
   deploy:
+    needs: [ test ]
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -38,7 +39,7 @@ jobs:
           cd second-action-react-demo
           npm test
       - name: Build project
-        run : |
+        run: |
           cd second-action-react-demo
           npm run build
       - name: Deploy
