@@ -1,6 +1,6 @@
 name: Deploy Second Action React Demo
 
-on: push
+on: [ push, workflow_dispatch ]
 
 jobs:
   test:
