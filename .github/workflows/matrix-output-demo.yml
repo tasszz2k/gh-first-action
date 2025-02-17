@@ -16,7 +16,7 @@ jobs:
       - name: Upload output artifact
         uses: actions/upload-artifact@v4
         with:
-          name: matrix_outputs
+          name: matrix_outputs_${{ matrix.node }}
           path: output.json
 
   collect_outputs:
@@ -26,8 +26,10 @@ jobs:
       - name: Download matrix outputs
         uses: actions/download-artifact@v4
         with:
-          name: matrix_outputs
+          name: matrix_outputs_${{ matrix.node }}
 
       - name: Read outputs
         run: |
-          cat output.json | jq .
+          for file in output*.json; do
+            cat "$file" | jq .
+          done
