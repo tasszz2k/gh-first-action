@@ -37,7 +37,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: dist-file
-          path: dist
+          path: s5-job-artifacts-outputs-65/dist
 
   deploy:
     needs: build
