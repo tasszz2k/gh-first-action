@@ -10,7 +10,8 @@ jobs:
   test:
     runs-on: ubuntu-latest
     steps:
-      - run:
+      - run: |
+          ls -lah
           cd s5-job-artifacts-outputs-65
       - name: Get code
         uses: actions/checkout@v3
