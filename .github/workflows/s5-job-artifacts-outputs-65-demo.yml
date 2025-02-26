@@ -37,7 +37,7 @@ jobs:
         working-directory: s5-job-artifacts-outputs-65
       - name: Publish JS filename
         id: publish
-        run: find dist/assets/*.js -type f -execdir echo 'script-file={}' >> $GITHUB_OUTPUT ';'
+        run: find s5-job-artifacts-outputs-65/dist/assets/*.js -type f -execdir echo 'script-file={}' >> $GITHUB_OUTPUT ';'
       - name: Upload artifacts
         uses: actions/upload-artifact@v4
         with:
