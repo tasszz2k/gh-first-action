@@ -12,34 +12,33 @@ jobs:
     steps:
       - name: Get code
         uses: actions/checkout@v3
-      - run: |
-          ls -lah
-          cd s5-job-artifacts-outputs-65
       - name: Install dependencies
         run: npm ci
+        working-directory: s5-job-artifacts-outputs-65
       - name: Lint code
         run: npm run lint
+        working-directory: s5-job-artifacts-outputs-65
       - name: Test code
         run: npm run test
+        working-directory: s5-job-artifacts-outputs-65
   build:
     needs: test
     runs-on: ubuntu-latest
     steps:
-      - run:
-          cd s5-job-artifacts-outputs-65
       - name: Get code
         uses: actions/checkout@v3
       - name: Install dependencies
         run: npm ci
+        working-directory: s5-job-artifacts-outputs-65
       - name: Build website
         run: npm run build
+        working-directory: s5-job-artifacts-outputs-65
       - name: Upload artifacts
         uses: actions/upload-artifact@v4
+        working-directory: s5-job-artifacts-outputs-65
         with:
           name: dist-file
-          path: |
-            dist
-            package.json
+          path: dist
 
   deploy:
     needs: build
