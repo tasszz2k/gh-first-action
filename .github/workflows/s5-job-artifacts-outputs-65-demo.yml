@@ -10,6 +10,8 @@ jobs:
   test:
     runs-on: ubuntu-latest
     steps:
+      - run:
+          cd s5-job-artifacts-outputs-65
       - name: Get code
         uses: actions/checkout@v3
       - name: Install dependencies
@@ -22,6 +24,8 @@ jobs:
     needs: test
     runs-on: ubuntu-latest
     steps:
+      - run:
+          cd s5-job-artifacts-outputs-65
       - name: Get code
         uses: actions/checkout@v3
       - name: Install dependencies
