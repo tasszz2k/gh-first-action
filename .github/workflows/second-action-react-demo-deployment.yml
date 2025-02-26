@@ -52,4 +52,4 @@ jobs:
       - name: Deploy
         run: echo "Deploying ...!"
       - name: Done
-        run: echo "Done!"
+        run: echo "Done! "
