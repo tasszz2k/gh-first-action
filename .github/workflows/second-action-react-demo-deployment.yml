@@ -1,6 +1,13 @@
 name: Deploy Second Action React Demo
 
-on: [ push, workflow_dispatch ]
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+    paths:
+      - 'second-action-react-demo/**'
+      - '.github/workflows/second-action-react-demo-deployment.yml'
 
 jobs:
   test:
