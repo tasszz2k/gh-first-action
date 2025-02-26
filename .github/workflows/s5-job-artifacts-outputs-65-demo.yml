@@ -3,6 +3,9 @@ on:
   push:
     branches:
       - main
+    paths:
+      - '.github/workflows/s5-job-artifacts-outputs-65-demo.yml'
+      - 's5-job-artifacts-outputs-65/**'
 jobs:
   test:
     runs-on: ubuntu-latest
