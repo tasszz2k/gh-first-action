@@ -35,7 +35,6 @@ jobs:
         working-directory: s5-job-artifacts-outputs-65
       - name: Upload artifacts
         uses: actions/upload-artifact@v4
-        working-directory: s5-job-artifacts-outputs-65
         with:
           name: dist-file
           path: dist
