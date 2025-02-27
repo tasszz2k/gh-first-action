@@ -16,6 +16,9 @@ jobs:
         include:
           - node-version: latest
             operating-system: macos-latest
+        exclude:
+          - node-version: 12
+            operating-system: windows-latest
     runs-on: ${{ matrix.operating-system }}
     steps:
       - name: Get code
