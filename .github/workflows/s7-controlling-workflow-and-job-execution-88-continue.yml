@@ -1,10 +1,10 @@
-name: Website Deployment
+name: Website Deployment (Continue)
 on:
   push:
     branches:
       - main
     paths:
-      - '.github/workflows/s7-controlling-workflow-and-job-execution-88-execution-flow.yml'
+      - '.github/workflows/s7-controlling-workflow-and-job-execution-88-continue.yml'
       - 's7-controlling-workflow-and-job-execution-88/**'
 jobs:
   lint:
