@@ -13,7 +13,7 @@ jobs:
       matrix:
         node-version: [ 12, 14, 16 ]
         operating-system: [ ubuntu-latest, windows-latest ]
-        dump-array: [ 1,2,3 ]
+#        dump-array: [ 1,2,3 ]
         include:
           - node-version: latest
             operating-system: macos-latest

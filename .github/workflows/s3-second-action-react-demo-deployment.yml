@@ -7,7 +7,7 @@ on:
       - main
     paths:
       - 'second-action-react-demo/**'
-      - '.github/workflows/second-action-react-demo-deployment.yml'
+      - 's3-second-action-react-demo-deployment.yml'
 
 jobs:
   test:
