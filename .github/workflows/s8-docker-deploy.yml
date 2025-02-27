@@ -4,9 +4,9 @@ on:
     branches:
       - main
       - dev
-  path:
-    - '.github/workflows/s8-docker-deploy.yml'
-    - 's8-docker-deploy/**'
+    paths:
+      - '.github/workflows/s8-docker-deploy.yml'
+      - 's8-docker-deploy/**'
 env:
   CACHE_KEY: node-deps
   MONGODB_DB_NAME: gha-demo
