@@ -43,7 +43,7 @@ jobs:
         working-directory: s7-controlling-workflow-and-job-execution-88
         run: npm run test
       - name: Upload test report
-        if: steps.run-tests.outcome == 'failure'
+        if: failure() && steps.run-tests.outcome == 'failure'
         uses: actions/upload-artifact@v4
         with:
           name: test-report
