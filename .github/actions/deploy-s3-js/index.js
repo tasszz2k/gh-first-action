@@ -14,6 +14,10 @@ function run() {
     core.notice(`disFolder: ${disFolder}`);
 
     exec.exec('ls', ['-la']);
+
+    // test print dummy from env
+    core.info(`AWS_ACCESS_KEY_ID: ${process.env.AWS_ACCESS_KEY_ID}`);
+
 }
 
 run();
