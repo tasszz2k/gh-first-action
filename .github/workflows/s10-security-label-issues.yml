@@ -5,10 +5,14 @@ on:
       - opened
 jobs:
   assign-label:
+    permissions:
+      issues: write
     runs-on: ubuntu-latest
     steps:
       - name: Assign label
         if: contains(github.event.issue.title, 'bug')
+        env:
+          ISSUE_TITLE: ${{ github.event.issue.title }}
         run: |
           echo "Issue title: $ISSUE_TITLE"
           curl -X POST \
