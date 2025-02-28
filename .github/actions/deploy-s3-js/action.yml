@@ -12,7 +12,9 @@ inputs:
     description: 'The folder to deploy.'
     required: false
     default: 'dist'
-
+outputs:
+  website-url:
+    description: 'The URL of the deployed website.'
 runs:
   using: node20
 #  pre: |

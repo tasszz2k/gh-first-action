@@ -16,8 +16,10 @@ function run() {
     exec.exec('ls', ['-la']);
 
     // test print dummy from env
-    core.info(`AWS_ACCESS_KEY_ID: ${process.env.AWS_ACCESS_KEY_ID}`);
+    core.debug(`AWS_ACCESS_KEY_ID: ${process.env.AWS_ACCESS_KEY_ID}`);
 
+    const websiteUrl = `http://${bucket}.s3-website-${bucketRegion}.amazonaws.com`;
+    core.setOutput('website-url', websiteUrl);
 }
 
 run();
