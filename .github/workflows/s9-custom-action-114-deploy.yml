@@ -23,16 +23,9 @@ jobs:
     steps:
       - name: Get code
         uses: actions/checkout@v4
-      - name: Cache dependencies
-        id: cache
-        uses: actions/cache@v4
-        with:
-          path: node_modules
-          key: deps-node-modules-${{ hashFiles('s9-custom-action-114/**/package-lock.json') }}
-      - name: Install dependencies
-        if: steps.cache.outputs.cache-hit != 'true'
+      - name: Lint code
         working-directory: s9-custom-action-114
-        run: npm ci
+        run: npm run lint
       - name: Test code
         id: run-tests
         working-directory: s9-custom-action-114
@@ -49,16 +42,9 @@ jobs:
     steps:
       - name: Get code
         uses: actions/checkout@v4
-      - name: Cache dependencies
-        id: cache
-        uses: actions/cache@v4
-        with:
-          path: node_modules
-          key: deps-node-modules-${{ hashFiles('s9-custom-action-114/**/package-lock.json') }}
-      - name: Install dependencies
-        if: steps.cache.outputs.cache-hit != 'true'
+      - name: Lint code
         working-directory: s9-custom-action-114
-        run: npm ci
+        run: npm run lint
       - name: Build website
         working-directory: s9-custom-action-114
         run: npm run build
