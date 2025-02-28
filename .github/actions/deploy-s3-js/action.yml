@@ -1,0 +1,9 @@
+name: Deploy to AWS S3
+description: Deploy a static website to AWS S3
+runs:
+  using: node20
+  pre: |
+    console.log('Setting up the environment...')
+  main: main.js
+  post: |
+    console.log('Cleaning up...')
