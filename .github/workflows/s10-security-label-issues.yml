@@ -13,8 +13,8 @@ jobs:
           echo "Issue title: $ISSUE_TITLE"
           curl -X POST \
           --url https://api.github.com/repos/${{ github.repository }}/issues/${{ github.event.issue.number }}/labels \
-          -H 'Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}' \
-          -H 'Content-Type: application/json' \
+          -H 'authorization: Bearer ${{ secrets.GITHUB_TOKEN }}' \
+          -H 'content-Type: application/json' \
           -d '{
               "labels": ["bug"]
             }' \
