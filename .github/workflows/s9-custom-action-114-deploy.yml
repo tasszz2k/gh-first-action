@@ -23,9 +23,9 @@ jobs:
     steps:
       - name: Get code
         uses: actions/checkout@v4
-      - name: Lint code
-        working-directory: s9-custom-action-114
-        run: npm run lint
+      - name: Load and cache dependencies
+        id: cache
+        uses: ./.github/actions/cache-deps
       - name: Test code
         id: run-tests
         working-directory: s9-custom-action-114
@@ -42,9 +42,9 @@ jobs:
     steps:
       - name: Get code
         uses: actions/checkout@v4
-      - name: Lint code
-        working-directory: s9-custom-action-114
-        run: npm run lint
+      - name: Load and cache dependencies
+        id: cache
+        uses: ./.github/actions/cache-deps
       - name: Build website
         working-directory: s9-custom-action-114
         run: npm run build
