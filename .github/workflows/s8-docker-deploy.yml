@@ -17,7 +17,7 @@ jobs:
     container: node:16
     env:
       MONGODB_CONNECTION_PROTOCOL: mongodb
-      MONGODB_CLUSTER_ADDRESS: 127.0.0.1:27017
+      MONGODB_CLUSTER_ADDRESS: mongodb-local:27017
       MONGODB_USERNAME: root
       MONGODB_PASSWORD: password-test
       PORT: 8080
