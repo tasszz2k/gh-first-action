@@ -6,7 +6,10 @@ on:
     paths:
       - '.github/workflows/s9-custom-action-114-deploy.yml'
       - '.github/actions/deploy-s3-js/**'
+      - '.github/actions/deploy-s3-docker/**'
       - 's9-custom-action-114/**'
+env:
+  ACTIONS_STEP_DEBUG: true
 jobs:
   lint:
     runs-on: ubuntu-latest
