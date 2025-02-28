@@ -12,16 +12,9 @@ jobs:
     steps:
       - name: Get code
         uses: actions/checkout@v4
-      - name: Cache dependencies
+      - name: Load and cache dependencies
         id: cache
-        uses: actions/cache@v4
-        with:
-          path: node_modules
-          key: deps-node-modules-${{ hashFiles('s9-custom-action-114/**/package-lock.json') }}
-      - name: Install dependencies
-        if: steps.cache.outputs.cache-hit != 'true'
-        working-directory: s9-custom-action-114
-        run: npm ci
+        uses: ./.github/actions/cache-deps
       - name: Lint code
         working-directory: s9-custom-action-114
         run: npm run lint
