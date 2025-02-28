@@ -1,0 +1,21 @@
+name: S10 Label Issues (Permission Example)
+on:
+  issues:
+    types:
+      - opened
+jobs:
+  assign-label:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Assign label
+        if: contains(github.event.issue.title, 'bug')
+        run: |
+          echo "Issue title: $ISSUE_TITLE"
+          curl -X POST \
+          --url https://api.github.com/repos/${{ github.repository }}/issues/${{ github.event.issue.number }}/labels \
+          -H 'Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}' \
+          -H 'Content-Type: application/json' \
+          -d '{
+              "labels": ["bug"]
+            }' \
+          --fail
