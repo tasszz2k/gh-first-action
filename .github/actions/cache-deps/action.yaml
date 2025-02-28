@@ -17,7 +17,7 @@ runs:
       if: inputs.caching == 'true'
       uses: actions/cache@v4
       with:
-        path: node_modules
+        path: s9-custom-action-114/node_modules
         key: deps-node-modules-${{ hashFiles('s9-custom-action-114/**/package-lock.json') }}
     - name: Install dependencies
       id: install
