@@ -4,6 +4,6 @@ runs:
   using: node20
   pre: |
     console.log('Setting up the environment...')
-  main: main.js
+  main: index.js
   post: |
     console.log('Cleaning up...')
