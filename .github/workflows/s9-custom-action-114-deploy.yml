@@ -5,6 +5,7 @@ on:
       - main
     paths:
       - '.github/workflows/s9-custom-action-114-deploy.yml'
+      - '.github/actions/deploy-s3-js/**'
       - 's9-custom-action-114/**'
 jobs:
   lint:
@@ -81,3 +82,7 @@ jobs:
         uses: actions/checkout@v4
       - name: Run custom action
         uses: ./.github/actions/deploy-s3-js
+        with:
+          bucket: 'gha-custom-action-hosting'
+          dist-folder: './dist'
+          bucket-region: 'us-east-2'
