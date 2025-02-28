@@ -15,6 +15,8 @@ jobs:
       - name: Load and cache dependencies
         id: cache
         uses: ./.github/actions/cache-deps
+        with:
+          caching: 'false'
       - name: Lint code
         working-directory: s9-custom-action-114
         run: npm run lint
